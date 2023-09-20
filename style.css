@@ -1,0 +1,55 @@
+body {
+	background-image: url(Data/rps101.jpg);
+	background-position: center -10%;
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+    background-blend-mode:lighten;
+}
+
+.text-white *{
+    font-size:2vh;
+    font-weight: 700;
+}
+
+textarea {
+    resize: none;
+    width: 200%;
+    font-size:1.5vh !important ;
+}
+
+.card-text{
+
+color: white;
+letter-spacing: 0;
+text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+
+
+}
+.car{
+    
+    width: 90%;
+    height: 12vh;
+    padding: 1vh 1vw 2vh 0.8vw;
+    margin: -1.2vh 0 0vh 0;
+}
+.card-img{
+    height: 9vh;
+    width: 500%;
+    margin: 1vh 0 0 -2.5vw;
+
+}
+.card-body{
+    padding: 0;
+}
+
+.mod-img{
+    height: 10vh;
+    width: auto;
+    transform: scale(1.5, 1.5);
+}
+
+.hoverch:hover{
+    
+    background-color: #7c50b4 !important;
+    border: 1vh inset grey!important;
+}

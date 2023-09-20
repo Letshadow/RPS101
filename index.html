@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS-101</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"         crossorigin="anonymous"></script>
+    <script defer src='https://cdn.plot.ly/plotly-2.25.2.min.js'></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src='rps101.js'></script>
+    <script defer src='script.js'></script>
+    
+
+</head>
+
+<body class="bg-dark">
+
+    <nav class="navbar navbar-expand-lg "  data-bs-theme="dark" style="background-color: #7c50b4;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">RPS-101</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+                    <div class="d-flex">
+
+                        <li class="nav-item">
+                            <button id="btn_all" class="btn btn-secondary btn-lg mx-2" type="button">
+                                ALL
+                            </button>
+                        </li>
+                                            
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-primary btn-lg dropdown-toggle mx-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categoria
+                            </button>
+                            <ul class="dropdown-menu" id="Nav_CAT">
+                                <!-- Lista Categorias -->
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-info btn-lg dropdown-toggle mx-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Tamaño
+                            </button>
+                            <ul class="dropdown-menu" id="Nav_TAM">
+                                <!-- Lista Tamaños -->
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="nav-item">
+                        <textarea disabled id="NAV_SEA" class="navbar-brand" rows="2" ></textarea>
+                    </div>
+                </ul>
+
+                <form class="d-flex" id="searchform">
+                    <input id="searching" class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-warning btn-lg" type="submit">Search</button>
+                    <button class="btn btn-outline-success btn-lg mx-2" type="button">PLAY</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="LObject" class="row row-cols-1 row-cols-md-5 g-4 m-1">
+        <!-- Cards -->
+    </div>
+
+    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                
+                    <div class="d-flex justify-content-between text-white" id="ModalLabel">
+
+                            <!-- Titulo icono y numero close -->
+                    </div>
+                    
+                <div class="modal-body ">
+                    <div class="d-flex justify-content-center card-text" id="Modaldes">
+                        <!-- Descripcion -->
+                    </div>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <button id="btn_navwin" type="button" class="btn-dark nav-link active">WIN</button>
+                        </li>
+                        <li class="nav-item">
+                            <button id="btn_navcat" type="button" class="btn-dark nav-link">CAT-WIN</button>
+                            
+                        </li>
+                        <li class="nav-item">
+                            <button id="btn_navtam" type="button" class="btn-dark nav-link">TAM-WIN</button>
+                        </li>
+                    </ul>
+                    <div class="d-flex justify-content-center">
+                    <div id="myDivtex" class="d-flex justify-content-center hidden">
+
+                        <table class="table table-dark table-striped text-white">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Combate</th>
+                                </tr>
+                            </thead>
+                            <tbody id='myttex' class="text-white">
+                                <!-- table will be drawn inside this DIV -->
+                            </tbody>
+                            
+                        </table>
+                        
+                    </div>
+
+                    <div id="myDiv" class="text-white hidden">
+                        <!-- Plotly chart will be drawn inside this DIV -->
+                    </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between text-white" id="Modalfoot">
+
+                    <!-- Categoria Tamaño -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>
